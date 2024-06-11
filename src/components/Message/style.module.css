@@ -1,0 +1,13 @@
+ 
+
+  .chat-scroll::-webkit-scrollbar {
+    display: none; 
+    /* scroll-behavior: auto; */
+    width: 2px;
+    height: 2px;
+  }
+   
+  .chat-scroll{
+    scroll-behavior: auto; 
+  }
+ 
