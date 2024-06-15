@@ -18,14 +18,13 @@ import { AuthContext } from "@/AuthProvider/Auth";
 import Users from "@/utils/users";
 import { useRouter } from "next/navigation";
 import ViewStory from "./ViewStory";
-import Link from "next/link";
-import { useToasts } from "react-toast-notifications";
+ 
 const CreateStory = ({stories}) => {
   const [openStory,setOpenStory] = useState(false)
   const [storyId,setStoryId] = useState();
   const { isOpen, onOpen, onClose } = useDisclosure();
    const {user} = useContext(AuthContext);
-   const { addToast } = useToasts()
+    
 
   const handleOpen = () => {
     onOpen();
@@ -100,7 +99,7 @@ const CreateStory = ({stories}) => {
               .then((data) => {
                 // console.log(data);
                 router.refresh();
-                addToast('Your story is published', { appearance: 'success', autoDismiss: true });
+              
                 setShowName("");
                 setShowImagePreview("");
                 fileInputRef.current.value = "";

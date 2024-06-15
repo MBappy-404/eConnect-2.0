@@ -11,12 +11,12 @@ import {
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { useToasts } from "react-toast-notifications";
+ 
 
 const DeleteModal = ({ id, openDeleteModal, setOpenDeleteModal }) => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const { addToast } = useToasts()
+ 
   const handleDelete = () => {
     setLoading(true);
     fetch(` https://e-connect-server.vercel.app/post/delete/${id}`, {
@@ -28,7 +28,7 @@ const DeleteModal = ({ id, openDeleteModal, setOpenDeleteModal }) => {
         if (data.acknowledged) {
           setOpenDeleteModal(false);
           router.refresh();
-          addToast('Your post has been deleted', { appearance: 'success', autoDismiss: true });
+          
           setLoading(false);
         }
       });

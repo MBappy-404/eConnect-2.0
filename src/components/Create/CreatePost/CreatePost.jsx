@@ -15,13 +15,13 @@ import {
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useToasts } from "react-toast-notifications";
+ 
 
 const CreatePost = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [loading, setLoading] = useState(false);
   const [enable,setEnable] = useState(false)
-  const { addToast } = useToasts()
+   
   const {
     register,
     formState: { errors },
@@ -127,7 +127,7 @@ const CreatePost = () => {
               .then((data) => {
                 // console.log(data);
                 router.refresh();
-                addToast('Your post is published', { appearance: 'success', autoDismiss: true });
+               
                 setLoading(false);
                 setShowName("");
                 setShowImagePreview("");
@@ -150,7 +150,7 @@ const CreatePost = () => {
         .then((data) => {
           // console.log(data);
           router.refresh();
-          addToast('Your post is published', { appearance: 'success', autoDismiss: true });
+         
           setLoading(false);
           onClose();
         });

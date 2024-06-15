@@ -4,10 +4,10 @@ import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useToasts } from "react-toast-notifications";
+ 
 
 const EditProfile = ({ users, onClose }) => {
-  const { addToast } = useToasts();
+   
   const {
     register,
     formState: { errors },
@@ -108,7 +108,7 @@ const EditProfile = ({ users, onClose }) => {
                 if (data.acknowledged || data.matchedCount) {
                   setLoading(false);
                   router.refresh();
-                  addToast('Your profile has been updated', { appearance: 'success', autoDismiss: true });
+                
                   onClose();
                 }
               });
@@ -130,7 +130,7 @@ const EditProfile = ({ users, onClose }) => {
           if (data.acknowledged || data.matchedCount) {
             setLoading(false);
             router.refresh();
-            addToast('Your profile has been updated', { appearance: 'success', autoDismiss: true });
+          
             onClose();
           }
         });

@@ -1,17 +1,12 @@
 "use client";
-import { ToastProvider } from "react-toast-notifications";
+ 
 import LeftSideNav from "../Layout/LeftSideNav/LeftSideNav";
 import RightSideNae from "../Layout/RightSideNav/RightSideNav";
 import MobileNav from "../MobileNav/MobileNav";
 import NavbarMobile from "../NavbarMobile/NavbarMobile";
 export default function MainLayout({ users, posts, children }) {
   return (
-    <ToastProvider
-      autoDismiss
-      autoDismissTimeout={5000}
- 
-      placement="bottom-center"
-    >
+    
       <div className="bg-[#0F172A]">
         <div className="md:hidden">
           <NavbarMobile users={users} />
@@ -34,6 +29,6 @@ export default function MainLayout({ users, posts, children }) {
           </div>
         </div>
       </div>
-    </ToastProvider>
+     
   );
 }

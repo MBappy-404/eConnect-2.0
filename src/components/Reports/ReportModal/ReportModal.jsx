@@ -11,7 +11,7 @@ import {
 import { useRouter } from "next/navigation";
 
 import { useState } from "react";
-import { useToasts } from "react-toast-notifications";
+ 
 const ReportModal = ({
   id,
   name,
@@ -23,7 +23,7 @@ const ReportModal = ({
   const [value, setValue] = useState();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const { addToast } = useToasts()
+ 
   const report = [
     { name: "Hate Speech" },
     { name: "Nudity Post" },
@@ -55,7 +55,7 @@ const ReportModal = ({
             setOpenReportModal(false)
              setLoading(false)
              router.refresh()
-             addToast('Your report has been submitted, we review your report.', { appearance: 'success', autoDismiss: true });
+             
            }
       })
   };

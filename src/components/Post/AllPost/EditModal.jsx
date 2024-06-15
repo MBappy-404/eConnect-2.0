@@ -13,12 +13,12 @@ import {
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { useToasts } from "react-toast-notifications";
+ 
 
 const EditModal = ({ post, onOpenChange, isOpen,onClose }) => {
   const router = useRouter();
   const[loading,setLoading] = useState(false);
-  const { addToast } = useToasts()
+ 
   const handleUpdatePost = (e) => {
     e.preventDefault();
    setLoading(true)
@@ -42,7 +42,7 @@ const EditModal = ({ post, onOpenChange, isOpen,onClose }) => {
         if (data.acknowledged) {
           router.refresh();
           setLoading(false)
-          addToast('Your post has been updated', { appearance: 'success', autoDismiss: true });
+         
           onClose();
           form.reset();
         }
