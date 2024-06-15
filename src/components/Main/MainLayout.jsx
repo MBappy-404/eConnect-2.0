@@ -4,7 +4,7 @@ import LeftSideNav from "../Layout/LeftSideNav/LeftSideNav";
 import RightSideNae from "../Layout/RightSideNav/RightSideNav";
 import MobileNav from "../MobileNav/MobileNav";
 import NavbarMobile from "../NavbarMobile/NavbarMobile";
-export default function MainLayout({ users, posts, children }) {
+export default function MainLayout({ users, posts,children}) {
   return (
     <div className="bg-[#0F172A]">
       <div className="md:hidden">
