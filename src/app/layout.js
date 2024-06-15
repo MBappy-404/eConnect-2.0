@@ -27,7 +27,7 @@ export default async function RootLayout({ children }) {
       <body className={inter.className}>
         <Providers>
           <Auth>
-            <MainLayout users={users} posts={posts} children={children}/>
+            <MainLayout users={users} posts={posts} children={children}></MainLayout>
           </Auth>
         </Providers>
       </body>
