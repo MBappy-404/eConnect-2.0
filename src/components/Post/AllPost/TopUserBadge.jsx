@@ -10,7 +10,7 @@ const TopUserBadge = ({ post, topUser }) => {
     .map((user, index) => ({ email: user.user_email, index: index + 1 }))
     .filter((user) => user.email === post.userEmail)
     .map((user) => user.index);
-  console.log(index);
+  // console.log(index);
   return (
     <div>
       <Tooltip

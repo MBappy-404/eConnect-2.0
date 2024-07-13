@@ -12,13 +12,7 @@ export default async function Post() {
 
 export async function SavedPosts() {
   const res = await fetch(
-    "https://e-connect-server.vercel.app/post/saved",
-    {
-      next: {
-        revalidate: 0,
-      },
-    }
-  );
+    "https://e-connect-server.vercel.app/post/saved");
   return res.json();
 }
 

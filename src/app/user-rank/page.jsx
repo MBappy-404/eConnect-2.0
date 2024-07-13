@@ -27,7 +27,7 @@ const page = async () => {
     }
   });
 
-  console.log(userPostCounts);
+  // console.log(userPostCounts);
   // Step 2: Convert the userPostCounts object into an array of objects
   const userPostCountsArray = Object.keys(userPostCounts).map((email) => ({
     user_email: email,
@@ -45,9 +45,9 @@ const page = async () => {
 
   // The user with the most posts
   const mostActiveUser = userPostCountsArray[0];
-  console.log(
-    `The user with the most posts is: ${mostActiveUser.user_email} with ${mostActiveUser.post_count} posts.`
-  );
+  // console.log(
+  //   `The user with the most posts is: ${mostActiveUser.user_email} with ${mostActiveUser.post_count} posts.`
+  // );
 
   // Step 5: Sort posts by user email alphabetically
   const sortedPostsByEmail = posts.sort((a, b) => {
@@ -56,7 +56,7 @@ const page = async () => {
     return 0;
   });
 
-  console.log("Posts sorted by user email:", sortedPostsByEmail);
+  // console.log("Posts sorted by user email:", sortedPostsByEmail);
 
   // Step 6: Optionally filter posts by user email (if needed)
   const specificUserEmail = "user2@example.com"; // change this to the email you want to filter by
@@ -64,7 +64,7 @@ const page = async () => {
     (post) => post.user_email === specificUserEmail
   );
 
-  console.log(`Posts by ${specificUserEmail}:`, filteredPosts);
+  // console.log(`Posts by ${specificUserEmail}:`, filteredPosts);
   return (
     <div>
       <div className="bg-[#1E293B]    border border-gray-600 shadow-md rounded-md overflow-hidden mb-2  mx-auto mt-2">

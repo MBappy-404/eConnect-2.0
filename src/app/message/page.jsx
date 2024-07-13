@@ -1,18 +1,18 @@
-import Chat from "@/components/Message/Chat";
-import { receiveMessage } from "@/utils/message";
-import Users from "@/utils/users";
-
  
+import Users from "@/utils/users";
+import dynamic from "next/dynamic";
 
-const page = async() => {
-    // load  users data for post
-    const users = await Users();
-    const messages = await receiveMessage();
-    return (
-        <div>
-            <Chat users={users} messages={messages}/>
-        </div>
-    );
+const ChatDynamic = dynamic(() => import("@/components/Message/Chat"), { ssr: false }); //disabled server side rendering
+
+const page = async () => {
+  // load  users data for post
+  const users = await Users();
+
+  return (
+    <div>
+      <ChatDynamic users={users} />
+    </div>
+  );
 };
 
 export default page;

@@ -1,10 +1,6 @@
 export default async function Story(){
 
-    const res = await fetch('https://e-connect-server.vercel.app/story',{
-        next:{
-            revalidate: 0,
-        }
-    });
+    const res = await fetch('https://e-connect-server.vercel.app/story');
     return  res.json();
 }
 

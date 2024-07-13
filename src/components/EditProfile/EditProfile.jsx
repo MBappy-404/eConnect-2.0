@@ -82,7 +82,7 @@ const EditProfile = ({ users, onClose }) => {
             };
 
             // post for update profile
-            fetch(" https://e-connect-server.vercel.app/post", {
+            fetch("https://e-connect-server.vercel.app/post", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -95,7 +95,7 @@ const EditProfile = ({ users, onClose }) => {
               });
 
             // update profile info
-            fetch(` https://e-connect-server.vercel.app/user?email=${user?.email}`, {
+            fetch(`https://e-connect-server.vercel.app/user?email=${user?.email}`, {
               method: "PUT",
               headers: {
                 "content-type": "application/json",
@@ -117,7 +117,7 @@ const EditProfile = ({ users, onClose }) => {
     } else {
       // update without image
       const updatedInfo = { image: photo, ...updateInfo };
-      fetch(` https://e-connect-server.vercel.app/user?email=${user?.email}`, {
+      fetch(`https://e-connect-server.vercel.app/user?email=${user?.email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

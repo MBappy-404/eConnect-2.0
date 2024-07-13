@@ -135,7 +135,7 @@ const PostCard = ({ post, users,posts}) => {
     }
   });
 
-  console.log(userPostCounts);
+  // console.log(userPostCounts);
   // Step 2: Convert the userPostCounts object into an array of objects
   const userPostCountsArray = Object.keys(userPostCounts).map((email) => ({
     user_email: email,

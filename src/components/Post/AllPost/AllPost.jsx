@@ -1,9 +1,7 @@
 "use client";
 
- 
 import PostCard from "./PostCard";
-const AllPost = ({ posts,users }) => {
-  
+const AllPost = ({ posts, users }) => {
   return (
     <div>
       {posts?.map((post) => (
