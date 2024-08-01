@@ -88,7 +88,7 @@ const CreateStory = ({stories}) => {
               
             };
             console.log(post);
-            fetch(" https://e-connect-server.vercel.app/story", {
+            fetch(" https://e-connect-server-mbappy404s-projects.vercel.app/story", {
               method: "POST",
               headers: {
                 "content-type": "application/json",

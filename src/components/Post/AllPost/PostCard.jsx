@@ -69,7 +69,7 @@ const PostCard = ({ post, users,posts}) => {
       users: user?.email,
     };
 
-    fetch(` https://e-connect-server.vercel.app/post/saved/${post._id}`, {
+    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/post/saved/${post._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -97,7 +97,7 @@ const PostCard = ({ post, users,posts}) => {
       userName: updatedName[0] ? updatedName[0] : name[0],
     };
     // console.log(like);
-    fetch(` https://e-connect-server.vercel.app/post/like/${id}`, {
+    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/post/like/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

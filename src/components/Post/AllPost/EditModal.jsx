@@ -29,7 +29,7 @@ const EditModal = ({ post, onOpenChange, isOpen,onClose }) => {
       updateText: form.updateText.value,
     };
     // console.log(updatePost);
-    fetch(` https://e-connect-server.vercel.app/post/update/${post._id}`, {
+    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/post/update/${post._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

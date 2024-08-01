@@ -58,7 +58,7 @@ const CommentModal = ({ post, users, isOpen, onOpenChange }) => {
       userPhoto: updatedPhoto ? updatedPhoto[0] : user?.photoURL,
     };
 
-    fetch(` https://e-connect-server.vercel.app/comments/post/${post._id}`, {
+    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/comments/post/${post._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -82,12 +82,12 @@ const CommentModal = ({ post, users, isOpen, onOpenChange }) => {
   return (
     <div>
       <Modal
-        className="min-h-[95vh] sticky"
+        className="min-h-[95vh] sticky overflow-hidden"
         isOpen={isOpen}
         backdrop="blur"
         size="2xl"
         classNames={{
-          body: "py-0 px-0 md:px-2 bg-[#1E293B]  overflow-y-auto",
+          body: " bg-[#1E293B] overflow-y-auto",
           base: "border-[#292f46] bg-[#19172c]  text-[#a8b0d3]",
           header: "bg-[#1E293B] rounded-t-xl border-b border-[#292f46]",
           footer: "bg-[#1E293B] rounded-b-xl border-t border-[#292f46]",

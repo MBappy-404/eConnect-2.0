@@ -78,7 +78,7 @@ const PostDetailsModal = ({ post, users }) => {
       userPhoto: updatedPhoto ? updatedPhoto[0] : user?.photoURL,
     };
 
-    fetch(` https://e-connect-server.vercel.app/comments/post/${post._id}`, {
+    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/comments/post/${post._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -105,7 +105,7 @@ const PostDetailsModal = ({ post, users }) => {
       userName: updatedName[0] ? updatedName[0] : name[0],
     };
     // console.log(like);
-    fetch(` https://e-connect-server.vercel.app/post/like/${id}`, {
+    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/post/like/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

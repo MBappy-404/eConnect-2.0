@@ -58,7 +58,7 @@ const SignIn = () => {
           email: user?.email,
         };
 
-        fetch(' https://e-connect-server.vercel.app/users', {
+        fetch(' https://e-connect-server-mbappy404s-projects.vercel.app/users', {
           method: 'PUT',
           headers: {
             'content-type': 'application/json',

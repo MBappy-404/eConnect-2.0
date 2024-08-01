@@ -25,7 +25,7 @@ const VisitProfile = ({ people, posts, users }) => {
       userName: updatedName ? updatedName : name,
     };
     // console.log(like);
-    fetch(` https://e-connect-server.vercel.app/user/like/${id}`, {
+    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/user/like/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

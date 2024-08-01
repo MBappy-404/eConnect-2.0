@@ -40,7 +40,7 @@ const Chat = ({ users }) => {
       try {
         // Replace 'yourMessageApiEndpoint' with your actual API endpoint
         const response = await fetch(
-          "https://e-connect-server.vercel.app/messages"
+          "https://e-connect-server-mbappy404s-projects.vercel.app/messages"
         );
         const data = await response.json();
         setMessages(data);
@@ -70,7 +70,7 @@ const Chat = ({ users }) => {
     };
     // console.log(data);
 
-    fetch(" https://e-connect-server.vercel.app/messages", {
+    fetch(" https://e-connect-server-mbappy404s-projects.vercel.app/messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

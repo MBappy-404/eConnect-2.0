@@ -19,7 +19,7 @@ const DeleteModal = ({ id, openDeleteModal, setOpenDeleteModal }) => {
  
   const handleDelete = () => {
     setLoading(true);
-    fetch(` https://e-connect-server.vercel.app/post/delete/${id}`, {
+    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/post/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
