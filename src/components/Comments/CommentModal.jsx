@@ -82,12 +82,12 @@ const CommentModal = ({ post, users, isOpen, onOpenChange }) => {
   return (
     <div>
       <Modal
-        className="min-h-[95vh] sticky overflow-hidden"
+        className="min-h-[90vh] sticky overflow-hidden"
         isOpen={isOpen}
         backdrop="blur"
         size="2xl"
         classNames={{
-          body: " bg-[#1E293B] overflow-y-auto",
+          body: " bg-[#1E293B]   px-1 md:px-3 py-0 overflow-y-auto",
           base: "border-[#292f46] bg-[#19172c]  text-[#a8b0d3]",
           header: "bg-[#1E293B] rounded-t-xl border-b border-[#292f46]",
           footer: "bg-[#1E293B] rounded-b-xl border-t border-[#292f46]",
@@ -100,7 +100,7 @@ const CommentModal = ({ post, users, isOpen, onOpenChange }) => {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1 text-center">
+              <ModalHeader className="flex flex-col gap-1 py-2 md:py-3 text-center">
                 {post.postUser}&apos;s Post{" "}
               </ModalHeader>
               {/* modal body  */}
@@ -111,7 +111,7 @@ const CommentModal = ({ post, users, isOpen, onOpenChange }) => {
               </ModalBody>
               {/* modal footer  */}
               <form onSubmit={handleComment}>
-                <ModalFooter className="flex justify-start items-center   gap-2">
+                <ModalFooter className="flex justify-start items-center py-2 md:py-3  gap-2">
                   <div className="w-10 h-10 relative -mt-4 rounded-full overflow-hidden border border-gray-700  ">
                     {photo ?
                       <>

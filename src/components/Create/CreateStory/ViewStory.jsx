@@ -56,7 +56,7 @@ const ViewStory = ({ storyId, stories, openStory, setOpenStory }) => {
                 {/* arrow left */}
                 <button
                   onClick={prevSlider}
-                  className="absolute top-1/2 left-3 z-50 flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8"
+                  className="absolute top-1/2 left-3 z-50 flex justify-center items-center bg-[#344766] border border-[#425b81] rounded-full w-10 h-10 "
                 >
                   <svg
                     className="w-4 h-4 md:w-6 md:h-6 icon"
@@ -81,7 +81,7 @@ const ViewStory = ({ storyId, stories, openStory, setOpenStory }) => {
                 {/* arrow right */}
                 <button
                   onClick={nextSlider}
-                  className="absolute top-1/2 z-50 right-3  flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8"
+                  className="absolute top-1/2 z-50 right-3  flex justify-center items-center bg-[#344766] border border-[#425b81] rounded-full w-10 h-10 "
                 >
                   <svg
                     className="w-4 h-4 md:w-6 md:h-6 icon"
