@@ -58,7 +58,7 @@ const CommentModal = ({ post, users, isOpen, onOpenChange }) => {
       userPhoto: updatedPhoto ? updatedPhoto[0] : user?.photoURL,
     };
 
-    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/comments/post/${post._id}`, {
+    fetch(`https://e-connect-server.vercel.app/comments/post/${post._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -111,8 +111,8 @@ const CommentModal = ({ post, users, isOpen, onOpenChange }) => {
               </ModalBody>
               {/* modal footer  */}
               <form onSubmit={handleComment}>
-                <ModalFooter className="flex justify-start items-center py-2 md:py-3  gap-2">
-                  <div className="w-10 h-10 relative -mt-4 rounded-full overflow-hidden border border-gray-700  ">
+                <ModalFooter className="flex justify-start items-center py-2 md:py-3 px-2  gap-2">
+                  <div className="w-8 md:w-10 h-8 md:h-10 relative -mt-4 rounded-full overflow-hidden border border-gray-700  ">
                     {photo ?
                       <>
                         <Image

@@ -64,7 +64,7 @@ const Signup = ({ setSelected }) => {
       joinDate: joinDate,
     };
 
-    fetch(" https://e-connect-server-mbappy404s-projects.vercel.app/users", {
+    fetch("https://e-connect-server.vercel.app/users", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

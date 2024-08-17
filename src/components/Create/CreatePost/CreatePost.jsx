@@ -116,7 +116,7 @@ const CreatePost = () => {
               ...postInfo,
             };
             // console.log(post);
-            fetch(" https://e-connect-server-mbappy404s-projects.vercel.app/post", {
+            fetch("https://e-connect-server.vercel.app/post", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -139,7 +139,7 @@ const CreatePost = () => {
     } else {
       const post = postInfo;
 
-      fetch(" https://e-connect-server-mbappy404s-projects.vercel.app/post", {
+      fetch("https://e-connect-server.vercel.app/post", {
         method: "POST",
         headers: {
           "content-type": "application/json",

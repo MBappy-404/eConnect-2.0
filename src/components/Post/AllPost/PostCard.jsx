@@ -70,7 +70,7 @@ const PostCard = ({ post, users, posts }) => {
     };
 
     fetch(
-      ` https://e-connect-server-mbappy404s-projects.vercel.app/post/saved/${post._id}`,
+      `https://e-connect-server.vercel.app/post/saved/${post._id}`,
       {
         method: "PUT",
         headers: {
@@ -101,7 +101,7 @@ const PostCard = ({ post, users, posts }) => {
     };
     // console.log(like);
     fetch(
-      ` https://e-connect-server-mbappy404s-projects.vercel.app/post/like/${id}`,
+      `https://e-connect-server.vercel.app/post/like/${id}`,
       {
         method: "PUT",
         headers: {
@@ -160,8 +160,8 @@ const PostCard = ({ post, users, posts }) => {
         id={post._id}
         className="bg-[#1E293B] mt-2 border border-gray-700 rounded-2xl "
       >
-        <div className="p-2 py-3">
-          <div className="flex  items-center  justify-between">
+        <div className=" py-3  pt-5 pb-2">
+          <div className="flex px-3 items-center  justify-between">
             <div className="flex gap-3 items-center">
               <TopUserBadge post={post} topUser={topUser} />
               <div className="flex">
@@ -235,18 +235,18 @@ const PostCard = ({ post, users, posts }) => {
                       {/* show save button by posted user   */}
                       {(post.userEmail === user?.email ||
                         user?.email === "sadikulsad0810@gmail.com") && (
-                        <Button
-                          onClick={onOpen}
-                          variant="light"
-                          className="flex justify-start  items-center"
-                          size="sm"
-                        >
-                          <i className="fa-solid mr-2   fa-square-pen text-lg text-gray-300"></i>
-                          <p className="font-medium text-sm -ml-0.5">
-                            Edit This Post
-                          </p>
-                        </Button>
-                      )}
+                          <Button
+                            onClick={onOpen}
+                            variant="light"
+                            className="flex justify-start  items-center"
+                            size="sm"
+                          >
+                            <i className="fa-solid mr-2   fa-square-pen text-lg text-gray-300"></i>
+                            <p className="font-medium text-sm -ml-0.5">
+                              Edit This Post
+                            </p>
+                          </Button>
+                        )}
 
                       <Button
                         onClick={handleSaved}
@@ -262,19 +262,19 @@ const PostCard = ({ post, users, posts }) => {
 
                       {(post.userEmail === user?.email ||
                         user?.email === "sadikulsad0810@gmail.com") && (
-                        <Button
-                          onPress={() => setOpenDeleteModal(true)}
-                          variant="light"
-                          className="flex justify-start items-center"
-                          size="sm"
-                        >
-                          <i className="fa-solid mr-2  fa-trash text-lg text-gray-300"></i>
-                          <p className="font-medium text-sm -ml-[1px]">
-                            {" "}
-                            Delete This Post
-                          </p>
-                        </Button>
-                      )}
+                          <Button
+                            onPress={() => setOpenDeleteModal(true)}
+                            variant="light"
+                            className="flex justify-start items-center"
+                            size="sm"
+                          >
+                            <i className="fa-solid mr-2  fa-trash text-lg text-gray-300"></i>
+                            <p className="font-medium text-sm -ml-[1px]">
+                              {" "}
+                              Delete This Post
+                            </p>
+                          </Button>
+                        )}
 
                       {/* report post  */}
                       <Button
@@ -334,7 +334,7 @@ const PostCard = ({ post, users, posts }) => {
           </div>
 
           <div className="mt-3">
-            <p className="text-base px-2   whitespace-pre-wrap break-all  text-white flex-shrink">
+            <p className="text-base px-3    whitespace-pre-wrap break-all  text-white flex-shrink">
               {post.post}
             </p>
 
@@ -349,7 +349,8 @@ const PostCard = ({ post, users, posts }) => {
               </div>
             )}
 
-            <div className="">
+             {/* like comment share button */}
+            <div className={`${!post?.image ? "border-t mt-2 border-gray-700" :""}`}>
               <div className="w-full">
                 <div className="flex items-center justify-between mt-2">
                   <Button
@@ -365,31 +366,21 @@ const PostCard = ({ post, users, posts }) => {
                         height="24px"
                         viewBox="0 0 256 256"
                       >
-                        <g fill="red">
+                        <g fill="#F31260">
                           <path
                             d="M232 102c0 66-104 122-104 122S24 168 24 102a54 54 0 0 1 54-54c22.59 0 41.94 12.31 50 32c8.06-19.69 27.41-32 50-32a54 54 0 0 1 54 54"
                             opacity={0.9}
                           ></path>
                           <path
-                            className="bg-red-600"
+                            className="bg-[#F31260]"
                             d="M178 40c-20.65 0-38.73 8.88-50 23.89C116.73 48.88 98.65 40 78 40a62.07 62.07 0 0 0-62 62c0 70 103.79 126.66 108.21 129a8 8 0 0 0 7.58 0C136.21 228.66 240 172 240 102a62.07 62.07 0 0 0-62-62m-50 174.8c-18.26-10.64-96-59.11-96-112.8a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8"
                           ></path>
                         </g>
                       </svg>
                     ) : (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24px"
-                        height="24px"
-                        viewBox="0 0 256 256"
-                      >
-                        <g fill="currentColor">
-                          <path
-                            d="M232 102c0 66-104 122-104 122S24 168 24 102a54 54 0 0 1 54-54c22.59 0 41.94 12.31 50 32c8.06-19.69 27.41-32 50-32a54 54 0 0 1 54 54"
-                            opacity={0.2}
-                          ></path>
-                          <path d="M178 40c-20.65 0-38.73 8.88-50 23.89C116.73 48.88 98.65 40 78 40a62.07 62.07 0 0 0-62 62c0 70 103.79 126.66 108.21 129a8 8 0 0 0 7.58 0C136.21 228.66 240 172 240 102a62.07 62.07 0 0 0-62-62m-50 174.8c-18.26-10.64-96-59.11-96-112.8a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8"></path>
-                        </g>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px"
+                      height="24px" viewBox="0 0 256 256">
+                        <path fill="#9CA3AF" d="M240 102c0 70-103.79 126.66-108.21 129a8 8 0 0 1-7.58 0C119.79 228.66 16 172 16 102a62.07 62.07 0 0 1 62-62c20.65 0 38.73 8.88 50 23.89C139.27 48.88 157.35 40 178 40a62.07 62.07 0 0 1 62 62" />
                       </svg>
                     )}
                     <p className="">{post.likes?.length || 0}</p>
@@ -399,7 +390,7 @@ const PostCard = ({ post, users, posts }) => {
                     className="px-5 md:px-10"
                     variant="light"
                   >
-                   <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12c0 2.3.8 4.5 2.3 6.3l-2 2c-.4.4-.4 1 0 1.4c.2.2.4.3.7.3h9c5.5 0 10-4.5 10-10S17.5 2 12 2M8 13c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1m4 0c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1m4 0c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><path fill="#9CA3AF" d="M12 2C6.5 2 2 6.5 2 12c0 2.3.8 4.5 2.3 6.3l-2 2c-.4.4-.4 1 0 1.4c.2.2.4.3.7.3h9c5.5 0 10-4.5 10-10S17.5 2 12 2M8 13c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1m4 0c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1m4 0c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1"></path></svg>
 
                     {post.comment?.length}
                   </Button>
@@ -415,7 +406,7 @@ const PostCard = ({ post, users, posts }) => {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        fill="currentColor"
+                        fill="#9CA3AF"
                         d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m2 14v-3c-3.61 0-6.19 1.43-8 4c.72-3.67 2.94-7.27 8-8V6l5 5z"
                       ></path>
                     </svg>

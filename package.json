@@ -18,7 +18,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.1",
-    "swiper": "^11.0.7"
+    "swiper": "^11.0.7",
+    "workbox-core": "^7.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

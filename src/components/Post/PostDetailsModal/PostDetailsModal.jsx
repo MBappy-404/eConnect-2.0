@@ -78,7 +78,7 @@ const PostDetailsModal = ({ post, users }) => {
       userPhoto: updatedPhoto ? updatedPhoto[0] : user?.photoURL,
     };
 
-    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/comments/post/${post._id}`, {
+    fetch(`https://e-connect-server.vercel.app/comments/post/${post._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -105,7 +105,7 @@ const PostDetailsModal = ({ post, users }) => {
       userName: updatedName[0] ? updatedName[0] : name[0],
     };
     // console.log(like);
-    fetch(` https://e-connect-server-mbappy404s-projects.vercel.app/post/like/${id}`, {
+    fetch(`https://e-connect-server.vercel.app/post/like/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -120,7 +120,7 @@ const PostDetailsModal = ({ post, users }) => {
         }
       });
   };
-  const photo = updatedPhoto[0] ? updatedPhoto[0]  : (user?.photoURL ? user?.photoURL : null)
+  const photo = updatedPhoto[0] ? updatedPhoto[0] : (user?.photoURL ? user?.photoURL : null)
   return (
     <div className=" ">
       <div key={post?._id} className="bg-[#1E293B] mt-1">
@@ -191,38 +191,67 @@ const PostDetailsModal = ({ post, users }) => {
               </div>
             )}
 
-            <div class="">
-              <div class="w-full">
-                <div class="flex items-center justify-between mt-2">
+            {/* like comment share button */}
+            <div className="">
+              <div className="w-full">
+                <div className="flex items-center justify-between mt-2">
                   <Button
                     color="default"
                     onClick={() => handlePostLike(post._id)}
-                    className="px-10"
+                    className="px-5 md:px-10"
                     variant="light"
                   >
                     {liked ? (
-                      <i className="fa-solid fa-heart text-red-500 text-lg"></i>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 256 256"
+                      >
+                        <g fill="#F31260">
+                          <path
+                            d="M232 102c0 66-104 122-104 122S24 168 24 102a54 54 0 0 1 54-54c22.59 0 41.94 12.31 50 32c8.06-19.69 27.41-32 50-32a54 54 0 0 1 54 54"
+                            opacity={0.9}
+                          ></path>
+                          <path
+                            className="bg-[#F31260]"
+                            d="M178 40c-20.65 0-38.73 8.88-50 23.89C116.73 48.88 98.65 40 78 40a62.07 62.07 0 0 0-62 62c0 70 103.79 126.66 108.21 129a8 8 0 0 0 7.58 0C136.21 228.66 240 172 240 102a62.07 62.07 0 0 0-62-62m-50 174.8c-18.26-10.64-96-59.11-96-112.8a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8"
+                          ></path>
+                        </g>
+                      </svg>
                     ) : (
-                      <i className="fa-regular fa-heart text-lg"></i>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px"
+                        height="24px" viewBox="0 0 256 256">
+                        <path fill="#9CA3AF" d="M240 102c0 70-103.79 126.66-108.21 129a8 8 0 0 1-7.58 0C119.79 228.66 16 172 16 102a62.07 62.07 0 0 1 62-62c20.65 0 38.73 8.88 50 23.89C139.27 48.88 157.35 40 178 40a62.07 62.07 0 0 1 62 62" />
+                      </svg>
                     )}
                     <p className="">{post.likes?.length || 0}</p>
                   </Button>
-                  <Button color="default" className="px-10" variant="light">
+                  <Button
+                    color="default"
+                    className="px-5 md:px-10"
+                    variant="light"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><path fill="#9CA3AF" d="M12 2C6.5 2 2 6.5 2 12c0 2.3.8 4.5 2.3 6.3l-2 2c-.4.4-.4 1 0 1.4c.2.2.4.3.7.3h9c5.5 0 10-4.5 10-10S17.5 2 12 2M8 13c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1m4 0c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1m4 0c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1"></path></svg>
+
+                    {post.comment?.length}
+                  </Button>
+                  <Button
+                    color="default"
+                    className="px-5 md:px-10"
+                    variant="light"
+                  >
                     <svg
-                      class="text-center h-6 w-6"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      stroke="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="24px"
                       viewBox="0 0 24 24"
                     >
-                      <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                      <path
+                        fill="#9CA3AF"
+                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m2 14v-3c-3.61 0-6.19 1.43-8 4c.72-3.67 2.94-7.27 8-8V6l5 5z"
+                      ></path>
                     </svg>
-                    {post?.comment?.length}
-                  </Button>
-                  <Button color="default" className="px-10" variant="light">
-                    <i class="fa-solid  fa-retweet text-lg"></i>
                     23
                   </Button>
                 </div>

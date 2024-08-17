@@ -1,6 +1,6 @@
 export default async function Users() {
   const res = await fetch(
-    "https://e-connect-server-mbappy404s-projects.vercel.app/users",
+    "https://e-connect-server.vercel.app/users",
     {
       next: {
         revalidate: 0,
@@ -13,7 +13,7 @@ export default async function Users() {
 
 export async function UsersDetails(id) {
   const res = await fetch(
-    `https://e-connect-server-mbappy404s-projects.vercel.app/user/${id}`,
+    `https://e-connect-server.vercel.app/user/${id}`,
     {
       cache: "no-store",
     }

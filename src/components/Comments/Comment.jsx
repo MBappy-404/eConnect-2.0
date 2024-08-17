@@ -71,8 +71,8 @@ const Comment = ({ comments, post, users }) => {
           .slice(0, 3)
           .map((comment, index) => (
             <div key={index} className="flex p-2 flex-1  -mt-5 justify-start">
-              <div className="flex justify-center  items-center gap-2">
-                <div className="w-10 h-10 border border-gray-600 rounded-full relative overflow-hidden  ">
+              <div className="flex justify-center  items-start gap-2">
+                <div className="w-10 h-10 border mt-5 border-gray-600 rounded-full relative overflow-hidden  ">
                   
             
                   {comment?.userPhoto ? (
