@@ -8,7 +8,9 @@ const page = async() => {
      const data = await Post();
     return (
         <div>
-            <Notification notifications={data}/>
+           {
+            data &&  <Notification notifications={data}/>
+           }
         </div>
     );
 };

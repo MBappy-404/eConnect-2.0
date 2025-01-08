@@ -69,16 +69,13 @@ const PostCard = ({ post, users, posts }) => {
       users: user?.email,
     };
 
-    fetch(
-      `https://e-connect-server.vercel.app/post/saved/${post._id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(savedUser),
-      }
-    )
+    fetch(`https://e-connect-server.vercel.app/post/saved/${post._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(savedUser),
+    })
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -100,16 +97,13 @@ const PostCard = ({ post, users, posts }) => {
       userName: updatedName[0] ? updatedName[0] : name[0],
     };
     // console.log(like);
-    fetch(
-      `https://e-connect-server.vercel.app/post/like/${id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(like),
-      }
-    )
+    fetch(`https://e-connect-server.vercel.app/post/like/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(like),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -235,18 +229,18 @@ const PostCard = ({ post, users, posts }) => {
                       {/* show save button by posted user   */}
                       {(post.userEmail === user?.email ||
                         user?.email === "sadikulsad0810@gmail.com") && (
-                          <Button
-                            onClick={onOpen}
-                            variant="light"
-                            className="flex justify-start  items-center"
-                            size="sm"
-                          >
-                            <i className="fa-solid mr-2   fa-square-pen text-lg text-gray-300"></i>
-                            <p className="font-medium text-sm -ml-0.5">
-                              Edit This Post
-                            </p>
-                          </Button>
-                        )}
+                        <Button
+                          onClick={onOpen}
+                          variant="light"
+                          className="flex justify-start  items-center"
+                          size="sm"
+                        >
+                          <i className="fa-solid mr-2   fa-square-pen text-lg text-gray-300"></i>
+                          <p className="font-medium text-sm -ml-0.5">
+                            Edit This Post
+                          </p>
+                        </Button>
+                      )}
 
                       <Button
                         onClick={handleSaved}
@@ -262,19 +256,19 @@ const PostCard = ({ post, users, posts }) => {
 
                       {(post.userEmail === user?.email ||
                         user?.email === "sadikulsad0810@gmail.com") && (
-                          <Button
-                            onPress={() => setOpenDeleteModal(true)}
-                            variant="light"
-                            className="flex justify-start items-center"
-                            size="sm"
-                          >
-                            <i className="fa-solid mr-2  fa-trash text-lg text-gray-300"></i>
-                            <p className="font-medium text-sm -ml-[1px]">
-                              {" "}
-                              Delete This Post
-                            </p>
-                          </Button>
-                        )}
+                        <Button
+                          onPress={() => setOpenDeleteModal(true)}
+                          variant="light"
+                          className="flex justify-start items-center"
+                          size="sm"
+                        >
+                          <i className="fa-solid mr-2  fa-trash text-lg text-gray-300"></i>
+                          <p className="font-medium text-sm -ml-[1px]">
+                            {" "}
+                            Delete This Post
+                          </p>
+                        </Button>
+                      )}
 
                       {/* report post  */}
                       <Button
@@ -333,13 +327,13 @@ const PostCard = ({ post, users, posts }) => {
             </div>
           </div>
 
-          <div className="mt-3">
+          <div className="mt-3 px-1">
             <p className="text-base px-3    whitespace-pre-wrap break-all  text-white flex-shrink">
               {post.post}
             </p>
 
             {post?.image && (
-              <div className="overflow-hidden border border-gray-700 rounded-lg w-full object-cover mt-3 h-96 relative">
+              <div className="overflow-hidden   border border-gray-700 rounded-lg w-full object-cover mt-3 h-96 relative">
                 <Image
                   objectFit="cover"
                   src={post.image}
@@ -349,8 +343,12 @@ const PostCard = ({ post, users, posts }) => {
               </div>
             )}
 
-             {/* like comment share button */}
-            <div className={`${!post?.image ? "border-t mt-2 border-gray-700" :""}`}>
+            {/* like comment share button */}
+            <div
+              className={`${
+                !post?.image ? "border-t mt-2 border-gray-700" : ""
+              }`}
+            >
               <div className="w-full">
                 <div className="flex items-center justify-between mt-2">
                   <Button
@@ -378,9 +376,16 @@ const PostCard = ({ post, users, posts }) => {
                         </g>
                       </svg>
                     ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px"
-                      height="24px" viewBox="0 0 256 256">
-                        <path fill="#9CA3AF" d="M240 102c0 70-103.79 126.66-108.21 129a8 8 0 0 1-7.58 0C119.79 228.66 16 172 16 102a62.07 62.07 0 0 1 62-62c20.65 0 38.73 8.88 50 23.89C139.27 48.88 157.35 40 178 40a62.07 62.07 0 0 1 62 62" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          fill="#9CA3AF"
+                          d="M240 102c0 70-103.79 126.66-108.21 129a8 8 0 0 1-7.58 0C119.79 228.66 16 172 16 102a62.07 62.07 0 0 1 62-62c20.65 0 38.73 8.88 50 23.89C139.27 48.88 157.35 40 178 40a62.07 62.07 0 0 1 62 62"
+                        />
                       </svg>
                     )}
                     <p className="">{post.likes?.length || 0}</p>
@@ -390,7 +395,17 @@ const PostCard = ({ post, users, posts }) => {
                     className="px-5 md:px-10"
                     variant="light"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><path fill="#9CA3AF" d="M12 2C6.5 2 2 6.5 2 12c0 2.3.8 4.5 2.3 6.3l-2 2c-.4.4-.4 1 0 1.4c.2.2.4.3.7.3h9c5.5 0 10-4.5 10-10S17.5 2 12 2M8 13c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1m4 0c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1m4 0c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="#9CA3AF"
+                        d="M12 2C6.5 2 2 6.5 2 12c0 2.3.8 4.5 2.3 6.3l-2 2c-.4.4-.4 1 0 1.4c.2.2.4.3.7.3h9c5.5 0 10-4.5 10-10S17.5 2 12 2M8 13c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1m4 0c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1m4 0c-.6 0-1-.4-1-1s.4-1 1-1s1 .4 1 1s-.4 1-1 1"
+                      ></path>
+                    </svg>
 
                     {post.comment?.length}
                   </Button>

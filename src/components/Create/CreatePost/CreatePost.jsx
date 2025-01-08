@@ -212,7 +212,6 @@ const CreatePost = () => {
                 </ModalHeader>
                 <ModalBody>
                   <Textarea
-                  
                     {...register("post", {})}
                     classNames={{
                       inputWrapper: "bg-[#1E293B]",
@@ -273,8 +272,10 @@ const CreatePost = () => {
                           const imageFile = e.target.files[0];
                           setShowName(imageFile);
                           setShowImagePreview(URL.createObjectURL(imageFile));
+                          setEnable(true);
                         }
                       }}
+                     
                       className="hidden"
                       id="file5"
                       type="file"

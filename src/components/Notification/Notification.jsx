@@ -1,10 +1,15 @@
 "use client";
 
+import { AuthContext } from "@/AuthProvider/Auth";
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
 
 const Notification = ({ notifications }) => {
+  console.log(notifications);
+  
+  const {user} = useContext(AuthContext);
   moment.updateLocale("en", {
     relativeTime: {
       future: "in %s",
@@ -29,7 +34,7 @@ const Notification = ({ notifications }) => {
         <div class="flex items-center justify-between">
           <span class="font-medium text-lg">Notifications</span>
         </div>
-        {notifications.slice().map((notification) => (
+        {notifications.filter((post)=>post?.userEmail != user?.email).slice().map((notification) => (
           <Link href={`post-details/${notification._id}`}
             key={notification._id}
             class="flex items-center  hover:bg-gray-700  transition-all duration-300  rounded-lg px-2 py-3 cursor-pointer"

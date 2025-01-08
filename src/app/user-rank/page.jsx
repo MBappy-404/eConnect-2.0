@@ -68,10 +68,11 @@ const page = async () => {
   return (
     <div>
       <div className="bg-[#1E293B]    border border-gray-600 shadow-md rounded-md overflow-hidden mb-2  mx-auto mt-2">
-        <div className=" py-2">
-          <h2 className="text-xl font-semibold px-2 text-gray-300">
+        <div className=" py-2 px-2 ">
+          <h2 className="text-xl font-semibold text-gray-300">
             Top Users
           </h2>
+          <p className="text-sm ">eConnect top users by activities</p>
         </div>
         {topUser.map((rank,i) => (
           <Rank  key={rank.user_email} index={i+1} rank={rank} people={peoples} />

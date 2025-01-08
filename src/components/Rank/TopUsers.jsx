@@ -11,7 +11,7 @@ const TopUsers = ({ rank, index }) => {
 
   return (
     <div>
-      <div className={`relative  mr-4`}>
+      <div className={`relative  mr-4 translate-y-[2px]`}>
         {!rank.post_count.photo ? (
            <Avatar showFallback src='https://images.unsplash.com/broken' />
         ) : (
