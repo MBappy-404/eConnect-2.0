@@ -164,116 +164,116 @@ const LeftSideNav = ({ posts }) => {
         </svg>
       ),
     },
-    {
-      name: "Others",
-      link: "/others",
-      icon: (
-        <svg
-          fill="white"
-          width="24px"
-          height="24px"
-          viewBox="0 0 512 512"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="Layer_1" />
+    // {
+    //   name: "Others",
+    //   link: "/others",
+    //   icon: (
+    //     <svg
+    //       fill="white"
+    //       width="24px"
+    //       height="24px"
+    //       viewBox="0 0 512 512"
+    //       version="1.1"
+    //       xmlns="http://www.w3.org/2000/svg"
+    //     >
+    //       <g id="Layer_1" />
 
-          <g id="Layer_2">
-            <g>
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="81.84"
-                  y="81.84"
-                />
-              </g>
+    //       <g id="Layer_2">
+    //         <g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="81.84"
+    //               y="81.84"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="217.66"
-                  y="81.84"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="217.66"
+    //               y="81.84"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="353.47"
-                  y="81.84"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="353.47"
+    //               y="81.84"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="81.84"
-                  y="217.66"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="81.84"
+    //               y="217.66"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="217.66"
-                  y="217.66"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="217.66"
+    //               y="217.66"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="353.47"
-                  y="217.66"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="353.47"
+    //               y="217.66"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="81.84"
-                  y="353.47"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="81.84"
+    //               y="353.47"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="217.66"
-                  y="353.47"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="217.66"
+    //               y="353.47"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="353.47"
-                  y="353.47"
-                />
-              </g>
-            </g>
-          </g>
-        </svg>
-      ),
-    },
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="353.47"
+    //               y="353.47"
+    //             />
+    //           </g>
+    //         </g>
+    //       </g>
+    //     </svg>
+    //   ),
+    // },
     {
       name: "Logout",
       icon: (
@@ -298,14 +298,17 @@ const LeftSideNav = ({ posts }) => {
     >
       <nav className="mr-4 bg-[#1E293B] ">
         <div className="relative flex flex-col pl-20 max-w-[270px]   overflow-auto  h-screen  ">
-          <a href="javascript:void(0)" className="pt-2">
-            <img
-              src="https://readymadeui.com/readymadeui-white.svg"
+          <a href="javascript:void(0)" className="pt-2 flex items-center">
+            <Image
+              src="/logo.png"
               alt="logo"
-              className="w-[150px]"
+              width={50}
+              height={50}
+              className="w-[50px]"
             />
+            <h3 className="text-2xl font-bold ml-1">Connect</h3>
           </a>
-          <ul className="space-y-3 my-10  flex-1  ">
+          <ul className="space-y-3 my-5  flex-1  ">
             {menuItems?.map((item) => (
               <li
                 key={item?.name}

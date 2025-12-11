@@ -356,6 +356,7 @@ const PostCard = ({ post, users, posts }) => {
                     onClick={() => handlePostLike(post._id)}
                     className="px-5 md:px-10"
                     variant="light"
+                    disabled={liked}
                   >
                     {liked ? (
                       <svg
@@ -425,7 +426,7 @@ const PostCard = ({ post, users, posts }) => {
                         d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m2 14v-3c-3.61 0-6.19 1.43-8 4c.72-3.67 2.94-7.27 8-8V6l5 5z"
                       ></path>
                     </svg>
-                    23
+                    
                   </Button>
                 </div>
               </div>

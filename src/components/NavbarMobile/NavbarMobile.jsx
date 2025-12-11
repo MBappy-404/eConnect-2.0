@@ -15,6 +15,7 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 import { AuthContext } from "@/AuthProvider/Auth";
+import Image from "next/image";
 
 const App = ({ users }) => {
   const { logOut, user } = useContext(AuthContext);
@@ -30,8 +31,8 @@ const App = ({ users }) => {
     })
     .map((eUser) => eUser?.updatedPhoto);
 
-    let photo = updatedPhoto[0] ? updatedPhoto[0] : user?.photoURL;
-    console.log(photo);
+  let photo = updatedPhoto[0] ? updatedPhoto[0] : user?.photoURL;
+  console.log(photo);
 
   const menuItems = [
     {
@@ -137,116 +138,116 @@ const App = ({ users }) => {
         </svg>
       ),
     },
-    {
-      name: "Others",
-      link: "/others",
-      icon: (
-        <svg
-          fill="white"
-          width="24px"
-          height="24px"
-          viewBox="0 0 512 512"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="Layer_1" />
+    // {
+    //   name: "Others",
+    //   link: "/others",
+    //   icon: (
+    //     <svg
+    //       fill="white"
+    //       width="24px"
+    //       height="24px"
+    //       viewBox="0 0 512 512"
+    //       version="1.1"
+    //       xmlns="http://www.w3.org/2000/svg"
+    //     >
+    //       <g id="Layer_1" />
 
-          <g id="Layer_2">
-            <g>
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="81.84"
-                  y="81.84"
-                />
-              </g>
+    //       <g id="Layer_2">
+    //         <g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="81.84"
+    //               y="81.84"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="217.66"
-                  y="81.84"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="217.66"
+    //               y="81.84"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="353.47"
-                  y="81.84"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="353.47"
+    //               y="81.84"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="81.84"
-                  y="217.66"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="81.84"
+    //               y="217.66"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="217.66"
-                  y="217.66"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="217.66"
+    //               y="217.66"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="353.47"
-                  y="217.66"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="353.47"
+    //               y="217.66"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="81.84"
-                  y="353.47"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="81.84"
+    //               y="353.47"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="217.66"
-                  y="353.47"
-                />
-              </g>
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="217.66"
+    //               y="353.47"
+    //             />
+    //           </g>
 
-              <g>
-                <rect
-                  class="st0"
-                  height="76.69"
-                  width="76.69"
-                  x="353.47"
-                  y="353.47"
-                />
-              </g>
-            </g>
-          </g>
-        </svg>
-      ),
-    },
+    //           <g>
+    //             <rect
+    //               class="st0"
+    //               height="76.69"
+    //               width="76.69"
+    //               x="353.47"
+    //               y="353.47"
+    //             />
+    //           </g>
+    //         </g>
+    //       </g>
+    //     </svg>
+    //   ),
+    // },
     {
       name: "Logout",
       icon: (
@@ -271,7 +272,13 @@ const App = ({ users }) => {
         className="fixed shadow-md top-0 border-b border-gray-700"
       >
         <NavbarBrand>
-          <p className="font-bold text-inherit">eConnect</p>
+          <Image
+            src="/logo.png"
+            alt="logo"
+            width={40}
+            height={40}
+            className="w-[40px]"
+          />
         </NavbarBrand>
 
         <NavbarContent justify="end">
@@ -286,14 +293,16 @@ const App = ({ users }) => {
                 placement="bottom-end"
               >
                 <DropdownTrigger>
-              {
-                photo ?   <Avatar
-                isBordered
-                as="button"
-                className="transition-transform"
-                src={photo}
-              /> : ""
-              }
+                  {photo ? (
+                    <Avatar
+                      isBordered
+                      as="button"
+                      className="transition-transform"
+                      src={photo}
+                    />
+                  ) : (
+                    ""
+                  )}
                 </DropdownTrigger>
                 <DropdownMenu>
                   {menuItems.map((item) => (
@@ -309,7 +318,8 @@ const App = ({ users }) => {
                       </Link>
                     </DropdownItem>
                   ))}
-                </DropdownMenu>W
+                </DropdownMenu>
+                W
               </Dropdown>
             ) : (
               <Link href="/auth">

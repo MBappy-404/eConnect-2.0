@@ -1,21 +1,12 @@
 "use client";
 
-import { AuthContext } from "@/AuthProvider/Auth";
 import { Button, Tab, Tabs } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-
-import { useRouter } from "next/navigation";
-import { useContext } from "react";
+ 
 import TopUsers from "./TopUsers";
 
 const Rank = ({ index, rank, people }) => {
-  const { user } = useContext(AuthContext);
-  const router = useRouter();
-  let name = people.name;
-  let updatedName = people.updatedName;
-  const liked = people?.likes?.some((like) => like.userEmail === user?.email);
-  // console.log(index);
   return (
     <div>
       <ul
@@ -34,16 +25,14 @@ const Rank = ({ index, rank, people }) => {
                   <Image src={badge} width={18} alt="badge" />
                 )}
               </h3>
-               
             </Link>
-            
           </div>
           <Button
             variant="light"
             size="sm"
             className=" px-4 text-sm font-semibold text-blue-400 border border-blue-400 rounded-full  "
           >
-             Total Post-{rank.post_count.count}
+            Total Post-{rank.post_count.count}
           </Button>
         </li>
       </ul>

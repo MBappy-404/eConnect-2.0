@@ -200,6 +200,7 @@ const PostDetailsModal = ({ post, users }) => {
                     onClick={() => handlePostLike(post._id)}
                     className="px-5 md:px-10"
                     variant="light"
+                    disabled={liked}
                   >
                     {liked ? (
                       <svg

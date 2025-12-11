@@ -10,6 +10,7 @@ import instagram from "@/assets/instagram.svg";
 import twitter from "@/assets/twitter.svg";
 import { useDisclosure } from "@nextui-org/react";
 import ProfileEditModal from "./ProfileEditModal";
+import { FaBriefcase, FaEnvelope, FaGraduationCap, FaMailBulk, FaMapMarkerAlt, FaPhone, FaUserFriends } from "react-icons/fa";
 
 const Profile = ({ users, posts }) => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
@@ -83,46 +84,65 @@ const Profile = ({ users, posts }) => {
                 <h2 className="font-bold text-lg ">About</h2>
               </div>
 
-              <div key={eUser._id} className="px-2">
-                <div className="py-2 grid grid-cols-1 text-white content-center space-y-3">
-                  <p className="">
-                    Name:
-                    {eUser.updatedName ? (
-                      <span className="ml-1">{eUser.updatedName}</span>
-                    ) : (
-                      <span className="ml-1">{user?.displayName}</span>
-                    )}
-                  </p>
+              <div className="lg:col-span-1 space-y-6 sm:space-y-8">
+                  {/* About Card */}
+                  <div className="   p-2 ">
+                    
+                    <div className="space-y-4">
+                      {eUser.work && (
+                        <div className="flex items-start gap-3">
+                          <FaBriefcase className="text-cyan-400 mt-1 flex-shrink-0" />
+                          <div>
+                            <p className="text-sm text-gray-400">Work</p>
+                            <p className="text-white">{eUser.work}</p>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {eUser.college && (
+                        <div className="flex items-start gap-3">
+                          <FaGraduationCap className="text-cyan-400 mt-1 flex-shrink-0" />
+                          <div>
+                            <p className="text-sm text-gray-400">Education</p>
+                            <p className="text-white">{eUser.college}</p>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {eUser.address && (
+                        <div className="flex items-start gap-3">
+                          <FaMapMarkerAlt className="text-cyan-400 mt-1 flex-shrink-0" />
+                          <div>
+                            <p className="text-sm text-gray-400">Location</p>
+                            <p className="text-white">{eUser.address}</p>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {eUser.phone && (
+                        <div className="flex items-start gap-3">
+                          <FaPhone className="text-cyan-400 mt-1 flex-shrink-0" />
+                          <div>
+                            <p className="text-sm text-gray-400">Phone</p>
+                            <p className="text-white">{eUser.phone}</p>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {eUser.email && (
+                        <div className="flex items-start gap-3">
+                          <FaEnvelope className="text-cyan-400 mt-1 flex-shrink-0" />
+                          <div>
+                            <p className="text-sm text-gray-400">Email</p>
+                            <p className="text-white break-all">{eUser.email}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
 
-
-                  {eUser.phone && (
-                    <p>
-                      Phone:
-                      <span className="ml-1">
-                        {eUser.phone ? eUser.phone : ""}
-                      </span>
-                    </p>
-                  )}
-
-                  {eUser.work && (
-                    <p>
-                      Work: <span className="ml-1"> {eUser.work}</span>
-                    </p>
-                  )}
-
-                  {eUser.college && (
-                    <p>
-                      Studies: <span className="ml-1">{eUser.college}</span>
-                    </p>
-                  )}
-
-                  {eUser.address && (
-                    <p>
-                      Address: <span className="ml-1">{eUser.address}</span>
-                    </p>
-                  )}
+               
                 </div>
-              </div>
 
               <h2 className="text-lg py-3 px-2   -mb-1 font-semibold">
                 {posts?.filter(posts=>posts.userEmail === user?.email)?.length ? "My Posts" : <>No Posts</>} 
